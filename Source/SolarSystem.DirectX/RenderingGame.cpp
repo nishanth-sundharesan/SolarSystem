@@ -1,6 +1,8 @@
 #include "pch.h"
-#include "CelestialObject.h"
+#include "Star.h"
+#include "Planet.h"
 #include "Satellite.h"
+#include "Orbit.h"
 #include "CelestialBodyConstants.h"
 
 using namespace std;
@@ -33,40 +35,40 @@ namespace Rendering
 		mComponents.push_back(mCamera);
 		mServices.AddService(Camera::TypeIdClass(), mCamera.get());
 
-		/*mGrid = make_shared<Grid>(*this, mCamera);
-		mComponents.push_back(mGrid);*/
+		mOrbit = make_shared<Orbit>(*this, mCamera, 40, 200);
+		mComponents.push_back(mOrbit);
 
-		mSun = make_shared<CelestialObject>(*this, mCamera, SunConstants::sTexturePath, SunConstants::sOrbitRadius, SunConstants::sScale, false, SunConstants::sRotationRate, SunConstants::sRevolutionRate);
+		mSun = make_shared<Star>(*this, mCamera, SunConstants::sTexturePath, SunConstants::sOrbitRadius, SunConstants::sScale, false, SunConstants::sRotationRate, SunConstants::sRevolutionRate);
 		mComponents.push_back(mSun);
 
-		mMercury = make_shared<CelestialObject>(*this, mCamera, MercuryConstants::sTexturePath, MercuryConstants::sOrbitRadius, MercuryConstants::sScale, true, MercuryConstants::sRotationRate, MercuryConstants::sRevolutionRate);
+		mMercury = make_shared<Planet>(*this, mCamera, MercuryConstants::sTexturePath, MercuryConstants::sOrbitRadius, MercuryConstants::sScale, true, MercuryConstants::sRotationRate, MercuryConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mMercury);
 
-		mVenus = make_shared<CelestialObject>(*this, mCamera, VenusConstants::sTexturePath, VenusConstants::sOrbitRadius, VenusConstants::sScale, true, VenusConstants::sRotationRate, VenusConstants::sRevolutionRate);
+		mVenus = make_shared<Planet>(*this, mCamera, VenusConstants::sTexturePath, VenusConstants::sOrbitRadius, VenusConstants::sScale, true, VenusConstants::sRotationRate, VenusConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mVenus);
 
-		mEarth = make_shared<CelestialObject>(*this, mCamera, EarthConstants::sTexturePath, EarthConstants::sOrbitRadius, EarthConstants::sScale, true, EarthConstants::sRotationRate, EarthConstants::sRevolutionRate);
+		mEarth = make_shared<Planet>(*this, mCamera, EarthConstants::sTexturePath, EarthConstants::sOrbitRadius, EarthConstants::sScale, true, EarthConstants::sRotationRate, EarthConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mEarth);
 
 		mMoon = make_shared<Satellite>(*this, mCamera, MoonConstants::sTexturePath, MoonConstants::sOrbitRadius, MoonConstants::sScale, true, MoonConstants::sRotationRate, MoonConstants::sRevolutionRate, mEarth);
 		mComponents.push_back(mMoon);
 
-		mMars = make_shared<CelestialObject>(*this, mCamera, MarsConstants::sTexturePath, MarsConstants::sOrbitRadius, MarsConstants::sScale, true, MarsConstants::sRotationRate, MarsConstants::sRevolutionRate);
+		mMars = make_shared<Planet>(*this, mCamera, MarsConstants::sTexturePath, MarsConstants::sOrbitRadius, MarsConstants::sScale, true, MarsConstants::sRotationRate, MarsConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mMars);
 
-		mJupiter = make_shared<CelestialObject>(*this, mCamera, JupiterConstants::sTexturePath, JupiterConstants::sOrbitRadius, JupiterConstants::sScale, true, JupiterConstants::sRotationRate, JupiterConstants::sRevolutionRate);
+		mJupiter = make_shared<Planet>(*this, mCamera, JupiterConstants::sTexturePath, JupiterConstants::sOrbitRadius, JupiterConstants::sScale, true, JupiterConstants::sRotationRate, JupiterConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mJupiter);
 
-		mSaturn = make_shared<CelestialObject>(*this, mCamera, SaturnConstants::sTexturePath, SaturnConstants::sOrbitRadius, SaturnConstants::sScale, true, SaturnConstants::sRotationRate, SaturnConstants::sRevolutionRate);
+		mSaturn = make_shared<Planet>(*this, mCamera, SaturnConstants::sTexturePath, SaturnConstants::sOrbitRadius, SaturnConstants::sScale, true, SaturnConstants::sRotationRate, SaturnConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mSaturn);
 
-		mUranus = make_shared<CelestialObject>(*this, mCamera, UranusConstants::sTexturePath, UranusConstants::sOrbitRadius, UranusConstants::sScale, true, UranusConstants::sRotationRate, UranusConstants::sRevolutionRate);
+		mUranus = make_shared<Planet>(*this, mCamera, UranusConstants::sTexturePath, UranusConstants::sOrbitRadius, UranusConstants::sScale, true, UranusConstants::sRotationRate, UranusConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mUranus);
 
-		mNeptune = make_shared<CelestialObject>(*this, mCamera, NeptuneConstants::sTexturePath, NeptuneConstants::sOrbitRadius, NeptuneConstants::sScale, true, NeptuneConstants::sRotationRate, NeptuneConstants::sRevolutionRate);
+		mNeptune = make_shared<Planet>(*this, mCamera, NeptuneConstants::sTexturePath, NeptuneConstants::sOrbitRadius, NeptuneConstants::sScale, true, NeptuneConstants::sRotationRate, NeptuneConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mNeptune);
 
-		mPluto = make_shared<CelestialObject>(*this, mCamera, PlutoConstants::sTexturePath, PlutoConstants::sOrbitRadius, PlutoConstants::sScale, true, PlutoConstants::sRotationRate, PlutoConstants::sRevolutionRate);
+		mPluto = make_shared<Planet>(*this, mCamera, PlutoConstants::sTexturePath, PlutoConstants::sOrbitRadius, PlutoConstants::sScale, true, PlutoConstants::sRotationRate, PlutoConstants::sRevolutionRate, mSun);
 		mComponents.push_back(mPluto);
 
 		Game::Initialize();

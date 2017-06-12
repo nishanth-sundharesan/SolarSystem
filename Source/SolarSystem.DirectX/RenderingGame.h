@@ -15,8 +15,10 @@ namespace Library
 }
 
 namespace SolarSystem
-{
+{	
 	class CelestialObject;
+	class Star;
+	class Orbit;
 }
 
 namespace Rendering
@@ -43,7 +45,8 @@ namespace Rendering
 		std::unique_ptr<Library::RenderStateHelper> mRenderStateHelper;
 		std::shared_ptr<Library::Grid> mGrid;
 
-		std::shared_ptr<SolarSystem::CelestialObject> mSun;
+		std::shared_ptr<SolarSystem::Orbit> mOrbit;
+		std::shared_ptr<SolarSystem::Star> mSun;
 		std::shared_ptr<SolarSystem::CelestialObject> mMercury;
 		std::shared_ptr<SolarSystem::CelestialObject> mVenus;
 		std::shared_ptr<SolarSystem::CelestialObject> mEarth;

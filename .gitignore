@@ -1,0 +1,11 @@
+*.opendb
+*.db
+Source/SolarSystem.DirectX/Obj/
+Source/SolarSystem.DirectX/Executables/
+Build/packages/
+*.user
+*.suo
+Source/Library.Desktop/Executables/
+Source/Library.Desktop/Obj/
+*.cso
+*.ipch

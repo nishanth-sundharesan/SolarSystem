@@ -33,7 +33,7 @@ namespace Library
 
 	private:
 		std::unique_ptr<DirectX::SpriteBatch> mSpriteBatch;
-		std::unique_ptr<DirectX::SpriteFont> mSpriteFont;
+		std::unique_ptr<DirectX::SpriteFont> mSpriteFont;		
 		DirectX::XMFLOAT2 mTextPosition;
 
 		int mFrameCount;

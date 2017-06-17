@@ -46,7 +46,10 @@ namespace Library
 		mSpriteBatch->Begin();
 
 		wostringstream fpsLabel;
-		fpsLabel << setprecision(4) << L"Frame Rate: " << mFrameRate << "    Total Elapsed Time: " << gameTime.TotalGameTimeSeconds().count();
+		fpsLabel << L"Frame Rate: " << mFrameRate << "    Total Elapsed Time: " << gameTime.TotalGameTimeSeconds().count() << "\n";
+		fpsLabel << L"Camera Controls(WASD + QE + Left Mouse)." << "\n";
+		fpsLabel << L"Press Space to toggle Animation." << "\n";
+		fpsLabel << L"Press Esc to Exit." << "\n";
 		mSpriteFont->DrawString(mSpriteBatch.get(), fpsLabel.str().c_str(), mTextPosition);
 
 		mSpriteBatch->End();

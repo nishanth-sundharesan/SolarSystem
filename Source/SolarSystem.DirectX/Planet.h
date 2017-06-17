@@ -6,7 +6,7 @@ namespace SolarSystem
 	class Planet final : public CelestialObject
 	{
 	public:
-		Planet(Library::Game& game, const std::shared_ptr<Library::Camera>& camera, const std::wstring& texturePath, const DirectX::XMFLOAT3& orbitRadius, const DirectX::XMFLOAT3& scaleFactor, bool isAnimated, float rotationRate, float revolutionRate, const std::shared_ptr<Star>& star);
+		Planet(Library::Game& game, const std::shared_ptr<Library::Camera>& camera, const std::wstring& texturePath, const DirectX::XMFLOAT3& orbitRadius, const DirectX::XMFLOAT3& scaleFactor, bool isAnimated, float rotationRate, float revolutionRate, float tiltAngle, const std::shared_ptr<Star>& star);
 		Planet(const Planet&) = default;
 		Planet& operator=(const Planet&) = default;
 		Planet(Planet&&) = default;

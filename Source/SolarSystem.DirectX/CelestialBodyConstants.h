@@ -14,7 +14,9 @@ namespace SolarSystem
 
 		static const float sRotationRate;
 
-		static const float sRevolutionRate;
+		static const float sTiltAngle;
+
+		static const float sRevolutionRate;		
 	};
 
 	class MoonConstants
@@ -29,6 +31,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class MercuryConstants
@@ -43,6 +49,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class VenusConstants
@@ -57,6 +67,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class EarthConstants
@@ -71,6 +85,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class MarsConstants
@@ -85,6 +103,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class JupiterConstants
@@ -99,6 +121,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class SaturnConstants
@@ -113,6 +139,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class UranusConstants
@@ -127,6 +157,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class NeptuneConstants
@@ -141,6 +175,10 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 
 	class PlutoConstants
@@ -155,5 +193,9 @@ namespace SolarSystem
 		static const float sRotationRate;
 
 		static const float sRevolutionRate;
+
+		static const float sTiltAngle;
+
+		static const std::uint32_t sNumberOfVertices;
 	};
 }

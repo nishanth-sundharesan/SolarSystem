@@ -8,8 +8,8 @@ using namespace Rendering;
 
 namespace SolarSystem
 {
-	Satellite::Satellite(Game& game, const shared_ptr<Camera>& camera, const wstring& texturePath, XMFLOAT3 orbitRadius, XMFLOAT3 scaleFactor, bool isAnimated, float rotationRate, float revolutionRate, const std::shared_ptr<CelestialObject>& planet)
-		:CelestialObject(game, camera, texturePath, orbitRadius, scaleFactor, isAnimated, rotationRate, revolutionRate), mPlanet(planet)
+	Satellite::Satellite(Game& game, const shared_ptr<Camera>& camera, const wstring& texturePath, const XMFLOAT3& orbitRadius, const XMFLOAT3& scaleFactor, bool isAnimated, float rotationRate, float revolutionRate, float tiltAngle, const shared_ptr<CelestialObject>& planet)
+		:CelestialObject(game, camera, texturePath, orbitRadius, scaleFactor, isAnimated, rotationRate, revolutionRate, tiltAngle, true), mPlanet(planet)
 	{
 
 	}
@@ -19,10 +19,9 @@ namespace SolarSystem
 		if (mAnimationEnabled)
 		{
 			mCurrentRotationAngle += gameTime.ElapsedGameTimeSeconds().count() * mRotationRate;
-			mCurrentRevolutionAngle += gameTime.ElapsedGameTimeSeconds().count() * mRevolutionRate;						
-			XMMATRIX planetSpaceMatrix = mPlanet->PositionMatrix();
-			XMMATRIX translatedMatrix = XMMatrixScaling(mObjectScale.x, mObjectScale.y, mObjectScale.y) * XMMatrixRotationY(mCurrentRotationAngle) * XMMatrixTranslation(mOrbitRadius.x, mOrbitRadius.y, mOrbitRadius.z) * XMMatrixRotationY(mCurrentRevolutionAngle) * planetSpaceMatrix;
-
+			mCurrentRevolutionAngle += gameTime.ElapsedGameTimeSeconds().count() * mRevolutionRate;			
+			XMMATRIX planetPosition = XMLoadFloat4x4(&mPlanet->PositionMatrix());						
+			XMMATRIX translatedMatrix = XMMatrixScaling(mObjectScale.x, mObjectScale.y, mObjectScale.y) * XMMatrixRotationY(mCurrentRotationAngle) * XMMatrixRotationX(XMConvertToRadians(mTiltAngle)) * XMMatrixTranslation(mOrbitRadius.x, mOrbitRadius.y, mOrbitRadius.z) * XMMatrixRotationY(mCurrentRevolutionAngle) * planetPosition;
 			XMStoreFloat4x4(&mWorldMatrix, translatedMatrix);
 		}
 	}

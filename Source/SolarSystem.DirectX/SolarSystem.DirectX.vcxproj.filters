@@ -1,39 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Content\Fonts\Arial_14_Regular.spritefont">
+      <Filter>Fonts</Filter>
+    </None>
+    <None Include="Content\Models\Sphere.obj.bin">
+      <Filter>Models</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameException.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Program.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="RenderingGame.cpp" />
+    <ClCompile Include="CelestialObject.cpp" />
+    <ClCompile Include="CelestialBodyConstants.cpp" />
+    <ClCompile Include="Satellite.cpp" />
+    <ClCompile Include="Star.cpp" />
+    <ClCompile Include="Planet.cpp" />
+    <ClCompile Include="Orbit.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RenderingGame.h" />
+    <ClInclude Include="CelestialObject.h" />
+    <ClInclude Include="CelestialBodyConstants.h" />
+    <ClInclude Include="Satellite.h" />
+    <ClInclude Include="Star.h" />
+    <ClInclude Include="Planet.h" />
+    <ClInclude Include="Orbit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{b8d13b00-5e22-4d43-aeee-b8d693282077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts">
+      <UniqueIdentifier>{d0beb98d-867d-41ac-9361-8ede57766585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{8f2dcbc6-b7d8-41df-b11e-89faaf26b073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Textures">
+      <UniqueIdentifier>{2ab2369c-0df3-438b-b4a4-28a45e9baafd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Content\Shaders\SolarSystemVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\Shaders\SolarSystemPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\Shaders\OrbitPS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\Shaders\OrbitVS.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Content\Textures\Earth.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Jupiter.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Mars.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Mercury.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Moon.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Neptune.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Saturn.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Sun.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Uranus.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Venus.jpg">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Content\Textures\Pluto.jpg">
+      <Filter>Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
